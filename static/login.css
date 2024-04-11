@@ -1,0 +1,224 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+    /* Gray background color */
+}
+
+.navbar {
+    background-color: #333;
+    /* Dark gray navbar background */
+    color: white;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    font-size: 1.5rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    /* White background color for search bar */
+}
+
+.search-container button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    /* Green color for buttons */
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Transition animation */
+}
+
+.search-container button:hover {
+    background-color: #4CAF50;
+    /* Darker green on hover */
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    width: 300px;
+    height: 50px;
+    border: rgb(212, 144, 144);
+    border-radius: 9px;
+    background-color: rgb(219, 160, 160);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    /* Green color for buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Transition animation */
+}
+
+.login-form button:hover {
+    background-color: #4CAF50;
+    /* Darker green on hover */
+}
+
+
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #333;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer Styles */
+#footer {
+    background-color: #333;
+    /* Dark gray background color */
+    padding: 30px 0;
+    color: #fff;
+    /* White text color */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Adjusted to match your website's max-width */
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-md-3 {
+    width: 25%;
+    flex: 0 0 25%;
+    padding: 0 10px;
+}
+
+.logo-footer {
+    width: 150px;
+    /* Adjusted size */
+    margin-bottom: 15px;
+}
+
+.footer-about {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-links,
+.footer-address,
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-address li,
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-address a,
+.social-links a {
+    color: #ccc;
+    /* Light gray text color */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-address a:hover,
+.social-links a:hover {
+    color: #fff;
+    /* White text color on hover */
+}

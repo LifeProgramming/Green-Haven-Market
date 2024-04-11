@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="brand">GreenHaven Market</div>
+        <div class="search-container">
+            <form action="" method="GET">
+                <input name="query" value="{{query}}" type="text" placeholder="Search items">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'items'%}">Browse</a></li>
+            {% if request.user.is_authenticated%}
+            <li><a href="{% url 'added-items'%}">Dashbord</a></li>
+            <li><a href="{% url 'messaging:inbox'%}">Inbox</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+            {% else%}
+            <li><a href="{% url 'login'%}">Login</a></li>
+            {% endif%}
+        </ul>
+    </div>
+</nav>
+{% if message%}
+<div class="alert">
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif%}

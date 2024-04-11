@@ -1,0 +1,32 @@
+{% extends 'core/core.html' %}
+{% load static%}
+
+{% block title%}
+Your Added Items
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'addedItems.css' %}">
+{% endblock%}
+
+{% block body%}
+<div class="added-items-container">
+    <button class="add-item"><a href="{% url 'add-item'%}">Add A New Item</a></button>
+    <h2>Your Added Items</h2>
+    <div class="product-list">
+        {% for item in addedItems%}
+        <div class="product">
+
+            <img src="{{item.image.url}}" alt="{{item.name}}">
+            <h3>{{item.name}}</h3>
+            <p>Price: ${{item.price}}</p>
+            <br>
+            <button><a href="{% url 'item-detail' item.id%}" class="detail">Item Detail</a></button>
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endblock %}

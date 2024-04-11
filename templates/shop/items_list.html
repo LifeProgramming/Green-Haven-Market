@@ -1,0 +1,26 @@
+{% extends 'core/core.html' %}
+{% load static%}
+
+{% block title%}
+Items List
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'productsList.css' %}">
+{% endblock%}
+
+{% block body%}
+<div class="product-list">
+    {% for item in items_list%}
+    <div class="product">
+        {% if item.image%}
+        <img src="{{item.image.url}}" alt="{{item.name}}">
+        {%endif%}
+        <h3>{{item.name}}</h3>
+        <p>Price: ${{item.price}}</p>
+        <br>
+        <a href="{% url 'item-detail' item.id%}">Product Detail</a>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'core/core.html' %}
+{% load static%}
+
+{% block title%}
+Inbox
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'inbox.css' %}">
+{% endblock%}
+
+{% block body%}
+<div class="inbox-container">
+    {% for message in messages%}
+    <div class="message-room">
+        <div class="item-image">
+            <img src="{{message.item.image.url}}" alt="{{message.item.name}}">
+        </div>
+        <div class="message-info">
+            {% for member in message.members.all%}
+            {% if member != request.user%}
+            <p class="message-content">{{member.username}}</p>
+            {% endif%}
+            {% endfor%}
+            <p class="message-time">Sent: {{message.modified_at}}</p>
+            <p>{{message.item.name}}</p>
+        </div>
+
+        <div class="item-name">
+            <button class="send"><a href="{% url 'messaging:detail' message.id %}">Send Message</a></button>
+
+        </div>
+    </div>
+    {% endfor%}
+
+</div>
+{% endblock %}

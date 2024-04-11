@@ -1,0 +1,26 @@
+{% extends 'core/core.html' %}
+{% load static%}
+
+{% block title%}
+Add Item
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'itemForm.css' %}">
+{% endblock%}
+
+{% block body%}
+<div class="add-item-container">
+    <form class="add-item-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Add New Item</h2>
+        {% for field in form %}
+        <div class="form-group">
+            <label for="item-name">Enter the {{field.label}}:</label>
+            {{field}}
+        </div>
+        {% endfor%}
+        <button type="submit" class="add-item-button">Add Item</button>
+    </form>
+</div>
+{% endblock %}

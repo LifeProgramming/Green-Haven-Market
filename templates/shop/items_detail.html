@@ -1,0 +1,38 @@
+{% extends 'core/core.html' %}
+{% load static%}
+
+{% block title%}
+Item Detail
+{% endblock%}
+
+{% block css_file%}
+<link rel="stylesheet" href="{% static 'items_detail.css' %}">
+{% endblock%}
+
+{% block body%}
+<div class="product-detail-container">
+    <div class="product-detail">
+        <img src="{{item.image.url}}" alt="{{item.name}}">
+        <h2>{{item.name}}</h2>
+        <p>{{item.description}}</p>
+        <div class="poster-details">
+            <p>Posted by: {{item.created_by}}</p>
+            <p>Posted on: {{item.created_at}}</p>
+        </div>
+        <p>Price: ${{item.price}}</p>
+
+        {% if item.created_by == request.user%}
+        <br>
+        <br>
+        <h3>This is your item</h3>
+        <br>
+        <a href="{% url 'delete-item' item.id %}" class="add-to-cart-button">Delete</a>
+        <a href="{% url 'edit-item' item.id %}" class="add-to-cart-button">Edit</a>
+
+        {% else%}
+        <a href="{% url 'messaging:new' item.id%}" class="add-to-cart-button">Contact Wtih Seller</a>
+        {% endif%}
+    </div>
+    <a href="{{ request.META.HTTP_REFERER|default:'/' }}" class="back-to-products">Back to Products List</a>
+</div>
+{% endblock %}
