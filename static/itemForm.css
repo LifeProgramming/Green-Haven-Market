@@ -44,6 +44,11 @@ body {
     /* White background color for search bar */
 }
 
+.form-group label[for='image-clear_id'],
+.form-group input[type='checkbox'] {
+    display: none;
+}
+
 .search-container button {
     padding: 8px 15px;
     border: none;
